@@ -20,7 +20,7 @@ public class AddProductDDT {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 				//reading data from property file 
-				FileInputStream file=new FileInputStream("/C:\\Seleniumwebdriver\\Advance_Selenium\\src\\test\\resources\\DATA.properties");
+				FileInputStream file=new FileInputStream("C:\\Users\\KARTHIKEYAN\\git\\repository\\Advance_Selenium\\src\\test\\resources\\DATA.properties");
 				Properties p=new Properties();
 				p.load(file);
 				String URL=p.getProperty("url");
@@ -30,9 +30,9 @@ public class AddProductDDT {
 				
 
 				//Read test data from Excel sheet 
-				FileInputStream file1=new FileInputStream("C:\\Seleniumwebdriver\\Advance_Selenium\\testdata.xlsx");
+				FileInputStream file1=new FileInputStream("C:\\Users\\KARTHIKEYAN\\git\\repository\\Advance_Selenium\\testdata.xlsx");
 				Workbook wb=WorkbookFactory.create(file1) ;
-				Sheet s=wb.getSheet("Product");
+				Sheet s=wb.getSheet("Sheet1");
 				Row r=s.getRow(1);
 				Cell c=r.getCell(2);
 				String PRODUCTNAME=c.getStringCellValue();
