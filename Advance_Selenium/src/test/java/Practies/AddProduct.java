@@ -3,8 +3,11 @@ package Practies;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import objectRepository.LoginPage;
 
 public class AddProduct {
 
@@ -15,7 +18,7 @@ public class AddProduct {
 		
 
 				//Step 1: Launch the browser
-				ChromeDriver driver =new ChromeDriver();
+				WebDriver driver =new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 				driver.manage().window().maximize();
 				
@@ -23,10 +26,16 @@ public class AddProduct {
 				driver.get("https://www.saucedemo.com/");
 				
 				//Step 3: login To Application
-				driver.findElement(By.id("user-name")).sendKeys("standard_user");
-				driver.findElement(By.id("password")).sendKeys("secret_sauce");
-				driver.findElement(By.id("login-button")).click();
+//				driver.findElement(By.id("user-name")).sendKeys("standard_user");
+//				driver.findElement(By.id("password")).sendKeys("secret_sauce");
+//				driver.findElement(By.id("login-button")).click();
 				
+				//Using pom class we are creating object and call 
+				LoginPage lp=new LoginPage(driver);
+				lp.getUsernametxt().sendKeys("standard_user");
+				lp.getPasswordtxt().sendKeys("secret_sauce");
+                lp.getLoginbut().click();
+                
 				//Step 4: Click on a Product - Sauce Labs Bolt T-shirt
 				WebElement productEle = driver.findElement(By.xpath("//dive[.='Sauce Labs Backpack']"));
 				String pAddedToCart = productEle.getText();
