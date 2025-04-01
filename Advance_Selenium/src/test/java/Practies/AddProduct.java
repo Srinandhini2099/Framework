@@ -26,18 +26,15 @@ public class AddProduct {
 				driver.get("https://www.saucedemo.com/");
 				
 				//Step 3: login To Application
-//				driver.findElement(By.id("user-name")).sendKeys("standard_user");
-//				driver.findElement(By.id("password")).sendKeys("secret_sauce");
-//				driver.findElement(By.id("login-button")).click();
+				driver.findElement(By.id("user-name")).sendKeys("standard_user");
+				driver.findElement(By.id("password")).sendKeys("secret_sauce");
+				driver.findElement(By.id("login-button")).click();
 				
-				//Using pom class we are creating object and call 
-				LoginPage lp=new LoginPage(driver);
-				lp.getUsernametxt().sendKeys("standard_user");
-				lp.getPasswordtxt().sendKeys("secret_sauce");
-                lp.getLoginbut().click();
-                
+			
+				
 				//Step 4: Click on a Product - Sauce Labs Bolt T-shirt
 				WebElement productEle = driver.findElement(By.xpath("//dive[.='Sauce Labs Backpack']"));
+                driver.findElement(By.xpath("//dive[@class='inventory_details_price']")
 				String pAddedToCart = productEle.getText();
 				productEle.click();
 				//Step 5: Add the Product To Cart

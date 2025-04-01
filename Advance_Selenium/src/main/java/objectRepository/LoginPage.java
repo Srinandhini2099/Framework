@@ -41,8 +41,17 @@ public class LoginPage {
 		return Loginbut;
 	}
 	
-	
-
-
+	/**
+	 * this method is used to perform login operation
+	 * @param username
+	 * @param password
+	 */
+//bussness Library -Genric method -related 	to Application 
+	public void LoginToApp(String username,String password )
+	{
+		usernametxt.sendKeys(username);	
+		passwordtxt.sendKeys(password);
+		Loginbut.click();
+	}
 
 }
