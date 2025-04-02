@@ -89,7 +89,8 @@ public class SeleniumUtility {
 	
 	{
 		Select s=new Select(element);
-		s.selectByContainsVisibleText(text);
+		//s.selectByContainsVisibleText(text);
+		s.selectByVisibleText(text);
 		
 		
 	}

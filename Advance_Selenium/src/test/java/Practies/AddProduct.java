@@ -34,7 +34,7 @@ public class AddProduct {
 				
 				//Step 4: Click on a Product - Sauce Labs Bolt T-shirt
 				WebElement productEle = driver.findElement(By.xpath("//dive[.='Sauce Labs Backpack']"));
-                driver.findElement(By.xpath("//dive[@class='inventory_details_price']")
+                driver.findElement(By.xpath("//dive[@class='inventory_details_price']"));
 				String pAddedToCart = productEle.getText();
 				productEle.click();
 				//Step 5: Add the Product To Cart

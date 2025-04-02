@@ -25,7 +25,23 @@ public class InventoryItemPage {
 		public WebElement getPrice() {
 			return price;
 		}
+		/**
+		 * This method is used to click on cardbtn
+		 */
+		public void clickOnaddtocardbtn()
+		{
+		    	addtocardbtn.click();
+		
+		}
+		/**
+		 * this method will return the price detailds
+		 * @return
+		 */
+		public String getPricedetails()
+		{
+			   return price.getText();
+			   
+ 	   } 
 
-
-
+  
 }

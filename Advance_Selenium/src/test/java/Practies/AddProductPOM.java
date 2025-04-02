@@ -27,7 +27,7 @@ public class AddProductPOM {
 	
 		//Using pom class we are creating object and call 
 		LoginPage lp=new LoginPage(driver);
-	//Instead of calling getter hear we are using Busness library Genric method 
+    	//Instead of calling getter hear we are using Busness library Genric method 
 		lp.LoginToApp("standard_user", "secret_sauce");
 		
 		//Step 4: Click on a Product - Sauce Labs Bolt T-shirt

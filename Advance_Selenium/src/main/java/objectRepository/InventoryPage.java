@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class InventoryPage {
+import GenericUtilities.SeleniumUtility;
+
+public class InventoryPage extends SeleniumUtility{
 
 	
-	@FindBy(className="shopping_cart_link")
+	@FindBy(id="shopping_cart_container")
 	private WebElement cardcontainer;
 	
 	@FindBy(id="react-burger-menu-btn")
@@ -18,7 +20,7 @@ public class InventoryPage {
 	@FindBy(linkText="Logout")
 	private WebElement logoutlink;
 	
-	@FindBy(xpath="\"//select[@class='product_sort_container'\"")
+	@FindBy(className="product_sort_container")
 	private WebElement sortDropdown;
 	
 	//Create constructor to Initialize
@@ -29,10 +31,6 @@ public class InventoryPage {
 	//Provide getter to access the webelement
 	
 
-	public WebElement getproductName() {
-		return productName;
-	}
-	
 
 	public WebElement getcardcontainer() {
 		return cardcontainer;
@@ -50,10 +48,15 @@ public class InventoryPage {
 	public WebElement getsortDropdown() {
 		return sortDropdown;
 	}
-	
+	/**
+	 * This method will used to clik on product
+	 * @param driver
+	 * @param productname
+	 * @return
+	 */
 	
 	//bussness Library -Genric method -related 	to Application 
-		public String LoginToApp(WebDriver driver,String productname )
+		public String clickOnproduct(WebDriver driver,String productname )
 		{
 		  WebElement ele = driver.findElement(By.xpath("//div[.='"+productname+"']"));
 		  String productdetails=ele.getText();
@@ -61,6 +64,34 @@ public class InventoryPage {
 		return productdetails;
 		  
 		}
+		/**
+		 * This method is used to select the lowest drop down 
+		 * @param driver
+		 * @param productname
+		 * @param sortoptions
+		 * @return
+		 */
+		
+	  public String clickOnLowestPriceProduct(WebDriver driver ,String productname, String sortoptions )
+	  {
+		  selectDropdow(sortDropdown,sortoptions);
+		  WebElement ele = driver.findElement(By.xpath("//div[.='"+productname+"']"));
+		  String ProductDetails = ele.getText();
+		  ele.click();
+		  return ProductDetails;
+		  
+		  
+	  }
+	  public void clickLogout()
+	  {
+		  menubtn.click();
+		  logoutlink.click();
+	  }
+	  public void clickOncardcontainer()
+	  {
+		  cardcontainer.click();
+	  }
+		
 
 
 
