@@ -3,6 +3,7 @@ package objectRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,9 +12,12 @@ public class LoginPage {
 	//Create class name with page nama
 	//Identify all web element using @FindBy Annotation
 	
-	@FindBy(id="user-name")
+//	@FindBy(id="user-name")
+//	private WebElement usernametxt;
+	//@FindAll annotation is used to find the web element with multiple locator
+	//Auto Healing process--If first locator not able to identify the element then automaticaly it shift to next locator 
+	@FindAll({@FindBy(id="user-name"),@FindBy(name="user-name")})
 	private WebElement usernametxt;
-	
 	@FindBy(id="password")
 	private WebElement passwordtxt;
 	
