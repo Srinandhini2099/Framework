@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suit]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="smokesuit"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="inventoryTest.AddProductToCartTest">
+        <methods>
+          <include name="dBConnectionclose"/>
+          <include name="launchbrowser"/>
+          <include name="tc_001_AddProductToCartTest"/>
+          <include name="LoginApp"/>
+          <include name="closeBrowser"/>
+          <include name="LogoutApp"/>
+          <include name="dBConnection"/>
+        </methods>
+      </class> <!-- inventoryTest.AddProductToCartTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suit] -->
