@@ -1,5 +1,5 @@
 package inventoryTest;
-
+import java.io.IOException;
 import static org.testng.Assert.assertEquals;
 
 import java.io.FileInputStream;
@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass;
@@ -27,7 +28,9 @@ import objectRepository.InventoryItemPage;
 import objectRepository.InventoryPage;
 import objectRepository.LoginPage;
 
+@Listeners(GenericUtilities.ListenersImplimentaion.class)
 public class AddProductToCartTest extends BaseClass{
+	
 
 	@Test(groups = "smokesuit")
 	public void tc_001_AddProductToCartTest() throws IOException
@@ -76,6 +79,7 @@ public class AddProductToCartTest extends BaseClass{
 		
 		
 		//Step 6: Navigate to Cart
+		Assert.fail();
 		Ip.clickOncardcontainer();
 		
 		

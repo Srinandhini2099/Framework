@@ -29,32 +29,36 @@ public class BaseClass {
 	
 	//Initializing webdriver
 	public WebDriver driver;
+	//For Listener
+	public static WebDriver sdriver;
 	@BeforeSuite(alwaysRun =true)
 	public void dBConnection()
 	{
 		System.out.println("Data base connection successfully done");
 	}
-	@Parameters("Browser")
-	@BeforeTest
-	//@BeforeClass(alwaysRun =true)
-	public void launchbrowser(String pvalue) throws IOException
+	//@Parameters("Browser")
+	//@BeforeTest
+	@BeforeClass(alwaysRun =true)
+	public void launchbrowser() throws IOException
 	{
-		//driver=new ChromeDriver();
+		driver=new FirefoxDriver();
+		sdriver=driver;
+		
 		//For cross Browser Execution Run time polymorphisam
-		if(pvalue.equalsIgnoreCase("chrome"))
-		{
-			driver=new ChromeDriver();
-		}
-		else if(pvalue.equalsIgnoreCase("Firefox"))
-		{
-			driver=new FirefoxDriver();
-
-		}
-		else
-		{
-			driver=new ChromeDriver();
-
-		}
+//		if(pvalue.equalsIgnoreCase("chrome"))
+//		{
+//			driver=new ChromeDriver();
+//		}
+//		else if(pvalue.equalsIgnoreCase("Firefox"))
+//		{
+//			driver=new FirefoxDriver();
+//
+//		}
+//		else
+//		{
+//			driver=new ChromeDriver();
+//
+//		}
 		
 		SUtil.maximizewindow(driver);
 		SUtil.implicitwait(driver);
