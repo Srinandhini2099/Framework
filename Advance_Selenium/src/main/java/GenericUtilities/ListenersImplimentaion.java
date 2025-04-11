@@ -6,6 +6,10 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
 public class ListenersImplimentaion implements ITestListener {
 
 
@@ -14,9 +18,24 @@ public class ListenersImplimentaion implements ITestListener {
 		String methodName=result.getMethod().getMethodName();
 		System.out.println(methodName+"->@Test Execution is statred ");
 		// TODO Auto-generated method stub
+		//Configure the extend report
+		ExtentSparkReporter esr =new ExtentSparkReporter(".\\ExtentReports\\Reports");
+		
+		esr.config().setDocumentTitle("Saw laps Execution report");
+		esr.config().setReportName("Execution Report");
+		esr.config().setTheme(Theme.DARK);
+		
+		ExtentReports report = new ExtentReports();
+		 report.attachReporter(esr);
+		 report.setSystemInfo("Base Browser", "Microsoft Edge");
+		 report.setSystemInfo("Base Platform", "Windows");
+		 report.setSystemInfo("Base Env", "Testing");
+		 report.setSystemInfo("Reporter name", "Srinandhini");
+		
 		
 		ITestListener.super.onTestStart(result);
 	}
+	
 
 	@Override
 	public void onTestSuccess(ITestResult result) {

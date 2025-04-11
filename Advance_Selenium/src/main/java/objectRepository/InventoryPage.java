@@ -17,7 +17,7 @@ public class InventoryPage extends SeleniumUtility{
 	@FindBy(id="react-burger-menu-btn")
 	private WebElement menubtn;
 	
-	@FindBy(linkText="Logout")
+	@FindBy(id="logout_sidebar_link")
 	private WebElement logoutlink;
 	
 	@FindBy(className="product_sort_container")

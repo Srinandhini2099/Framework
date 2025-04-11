@@ -79,7 +79,7 @@ public class AddProductToCartTest extends BaseClass{
 		
 		
 		//Step 6: Navigate to Cart
-		Assert.fail();
+	//	Assert.fail();
 		Ip.clickOncardcontainer();
 		
 		

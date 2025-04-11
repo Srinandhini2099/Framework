@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -41,7 +42,7 @@ public class BaseClass {
 	@BeforeClass(alwaysRun =true)
 	public void launchbrowser() throws IOException
 	{
-		driver=new FirefoxDriver();
+		driver=new EdgeDriver();
 		sdriver=driver;
 		
 		//For cross Browser Execution Run time polymorphisam
