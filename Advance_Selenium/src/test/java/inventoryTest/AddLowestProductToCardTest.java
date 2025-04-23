@@ -21,8 +21,8 @@ public class AddLowestProductToCardTest extends BaseClass {
 	public void tc_001_AddProductToCartTest() throws IOException
 	{
 		// Read Test Data From Excel File
-				String SORTOPTION = Futil.readDataFromExcel("Product", 4, 2);
-				String PRODUCTNAME = Futil.readDataFromExcel("Product", 4, 3);
+				String SORTOPTION = Futil.readDataFromExcel("SAUCESHEET", 4, 2);
+				String PRODUCTNAME = Futil.readDataFromExcel("SAUCESHEET", 4, 3);
 	
 	//Step 4: Click on a Product - Sauce Labs Backpackt
 	//PRODUCTNAME-----this value is taking from excel file to avoid the data hot coding
@@ -38,6 +38,13 @@ public class AddLowestProductToCardTest extends BaseClass {
 	String pInCart = driver.findElement(By.className("inventory_item_name")).getText();
     Assert.assertEquals(pAddedToCart, pInCart);
     System.out.println(pInCart);
+    
 
 }
+	//@Test(retryAnalyzer= GenericUtilities.RetryAnalyzerImplementation.class)
+//	public void sample()
+//	{
+//		Assert.fail();
+//		System.out.println("Hi");
+//	}
 }

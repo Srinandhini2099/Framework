@@ -3,7 +3,7 @@
 <suite name="Suite">
 
 <listeners>
-<listener class-name="GenericUtilities.ListenersImplimentaion.class"></listener>
+<listener class-name="GenericUtilities.ListenersImplimentaion"></listener>
 </listeners>
   <test thread-count="5" name="Test">
     <classes>

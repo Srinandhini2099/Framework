@@ -42,7 +42,7 @@ public class SauceLaps_Login {
 			    driver.findElement(By.name("lastName")).sendKeys("PALANISAMY");
 			   WebElement month = driver.findElement(By.id("month-label"));
 			   Select s=new Select(month);
-			    s.selectByContainsVisibleText("August");
+			    s.selectByVisibleText("August");
 			  
 
 			    

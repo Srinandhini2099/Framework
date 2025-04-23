@@ -1,3 +1,4 @@
+
 package inventoryTest;
 import java.io.IOException;
 import static org.testng.Assert.assertEquals;
@@ -47,7 +48,7 @@ public class AddProductToCartTest extends BaseClass{
 		String PASSWORD=Fileutil.readDataFromPropertyFile("password");
 
 		//Read test data from Excel sheet 
-		String PRODUCTNAME=Fileutil.readDataFromExcel("Sheet1", 1, 2);
+		String PRODUCTNAME=Fileutil.readDataFromExcel("SAUCESHEET", 1, 2);
 		
 		
 		
