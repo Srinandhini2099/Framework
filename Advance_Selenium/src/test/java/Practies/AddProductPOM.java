@@ -55,6 +55,7 @@ public class AddProductPOM {
 		//Step 8: Logout of App
 		driver.findElement(By.id("react-burger-menu-btn")).click();
 		driver.findElement(By.linkText("Logout")).click();
+		System.out.println("test commit");
 		
 	}
 

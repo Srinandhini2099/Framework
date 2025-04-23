@@ -93,6 +93,7 @@ public class AddProductToCartTest extends BaseClass{
 		driver.findElement(By.id("react-burger-menu-btn")).click();
 		driver.findElement(By.linkText("Logout")).click();
 		
+		System.out.println("hello test commit");
 	
 //		if(pInCart.equals(pAddedToCart))
 //		{
